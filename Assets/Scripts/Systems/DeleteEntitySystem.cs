@@ -3,7 +3,7 @@ using Unity.Jobs;
 using Unity.Collections;
 
 
-[AlwaysSynchronizeSystem]
+//[AlwaysSynchronizeSystem]
 [UpdateAfter(typeof(LaserDeletionSystem))]
 public class DeleteEntitySystem : JobComponentSystem
 {
