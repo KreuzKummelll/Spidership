@@ -1,6 +1,0 @@
-#include "il2cpp-config.h"
-#include "/Users/andrew/Developer/Unity/2020.1.0a18/Unity.app/Contents/il2cpp/libil2cpp/vm-utils/BlobReader.cpp"
-#include "/Users/andrew/Developer/Unity/2020.1.0a18/Unity.app/Contents/il2cpp/libil2cpp/vm-utils/Debugger.cpp"
-#include "/Users/andrew/Developer/Unity/2020.1.0a18/Unity.app/Contents/il2cpp/libil2cpp/vm-utils/NativeDelegateMethodCache.cpp"
-#include "/Users/andrew/Developer/Unity/2020.1.0a18/Unity.app/Contents/il2cpp/libil2cpp/vm-utils/NativeSymbol.cpp"
-#include "/Users/andrew/Developer/Unity/2020.1.0a18/Unity.app/Contents/il2cpp/libil2cpp/vm-utils/VmStringUtils.cpp"
