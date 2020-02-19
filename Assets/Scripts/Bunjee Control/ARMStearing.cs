@@ -39,25 +39,15 @@ public class ARMStearing : MonoBehaviour
     private void Stearing()
     {
 
-      
-        if (Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.LeftShift))
-        {
+        inputH = Input.GetAxis("Horizontal");
+        inputV = Input.GetAxis("Vertical");
 
-            inputH = Input.GetAxis("Horizontal");
-            inputV = Input.GetAxis("Vertical");
+        centerWheel();
 
-            centerWheel();
-
-            inputT = new Vector3(inputH, -inputV, inputZ);
-            //inputQ = new Quaternion(0, 0, inputH * 25f, 0);
-            //Debug.Log("Input " + inputT);
-            //Debug.Log("Input " + inputQ);
-            this.transform.Translate(inputT);
-        }
+        inputT = new Vector3(inputH, -inputV, inputZ);
         
-        
-        //this.transform.rotation = Quaternion.Lerp(centerObject.transform.rotation, inputQ, Curve.Evaluate(lerpPercent));
-        //this.transform.position = inputT;
+        this.transform.Translate(inputT);
+ 
     }
 
   

@@ -2,7 +2,7 @@
 
 
 [GenerateAuthoringComponent]
-public class TimerComponent : IComponentData
+public struct TimerComponent : IComponentData
 {
     public float currentLifeTime;
     public float maxLifeTime;

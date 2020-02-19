@@ -21,17 +21,14 @@ public class ARMShipModel : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-        {
-            Vector3 NextDir = new Vector3(-Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
+        
+            Vector3 NextDir = new Vector3(-Input.GetAxis("Vertical") * 0.5f, 0, Input.GetAxis("Horizontal"));
             if (NextDir != Vector3.zero)
                 transform.rotation = Quaternion.AngleAxis(90, -NextDir);
-
-  
-        } else
-        {
-            transform.rotation = Quaternion.identity;
-        }
+            else
+            {
+                transform.rotation = Quaternion.identity;
+            }
         
     }
     private void LateUpdate()
