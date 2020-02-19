@@ -40,11 +40,13 @@ public class AstroidSpawner : MonoBehaviour
     }
     private void Start()
     {
-       SpawnLotsOfAstroids();
+        transform.position = gameManager.playerShipPrefabGO.transform.position + offsetFromPlayer;
+        StartCoroutine(SpawnLotsOfAstroids());
+
     }
     private void LateUpdate()
     {
-        transform.position = gameManager.playerShipPrefabGO.transform.position + offsetFromPlayer;
+        
     }
 
     void SpawnAstroid()
@@ -53,17 +55,17 @@ public class AstroidSpawner : MonoBehaviour
         Vector3 direction = -Vector3.right;
         Vector3 speed = direction * UnityEngine.Random.Range(UnityEngine.Random.Range(-5, 10), UnityEngine.Random.Range(-5, 5));
 
-        PhysicsVelocity velociity = new PhysicsVelocity()
+        PhysicsVelocity velocity = new PhysicsVelocity()
         {
             Linear = speed,
             Angular = float3.zero
         };
         Translation translation = new Translation
         {
-            Value = new float3(transform.position.x + UnityEngine.Random.Range(-50f, 50f), transform.position.y + UnityEngine.Random.Range(-10f, 10f), transform.position.z + (UnityEngine.Random.Range(-50f, 50f)))
+            Value = new float3(transform.position.x + UnityEngine.Random.Range(-500f, 500f), transform.position.y + UnityEngine.Random.Range(-100f, 100f), transform.position.z + (UnityEngine.Random.Range(-500f, 500f)))
         };
 
-        manager.AddComponentData(newAstroidEntity, velociity);
+        manager.AddComponentData(newAstroidEntity, velocity);
         manager.AddComponentData(newAstroidEntity, translation);
 
         //manager.SetSharedComponentData(newAstroidEntity, new RenderMesh { mesh = meshObject, material = materialObject });
