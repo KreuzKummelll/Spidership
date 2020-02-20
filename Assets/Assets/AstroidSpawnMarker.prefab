@@ -43,10 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796afd5e8006a4c71a6dee2e721d5690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAstroidsPerSpawn: 300
+  maxAstroidsPerSpawn: 400
   _astroidPrefabs:
   - {fileID: 8577873139458856092, guid: bea79d55de7194e14b49ac17112c9832, type: 3}
   - {fileID: 2031914566100669394, guid: e865ab65c59cb4d32b6778d68af37f78, type: 3}
   - {fileID: 4594890570839594761, guid: 6f5989937c3bd4ae19674fee7ccb88ed, type: 3}
+  - {fileID: 830602559372565148, guid: 869bc7ecb5cfa40c1a9ea3974d0c47c9, type: 3}
+  - {fileID: 830602559372565148, guid: 869bc7ecb5cfa40c1a9ea3974d0c47c9, type: 3}
+  - {fileID: 830602559372565148, guid: 869bc7ecb5cfa40c1a9ea3974d0c47c9, type: 3}
   gameManager: {fileID: 0}
   offsetFromPlayer: {x: 100, y: 0, z: 100}

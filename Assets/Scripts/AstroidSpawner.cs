@@ -17,7 +17,7 @@ public class AstroidSpawner : MonoBehaviour
     public Vector3 offsetFromPlayer;
     
 
-    private Entity[] astroidEntities = new Entity[3];
+    private Entity[] astroidEntities;
 
 
 
@@ -29,6 +29,8 @@ public class AstroidSpawner : MonoBehaviour
         manager = World.DefaultGameObjectInjectionWorld.EntityManager;
         blobAssetStore = new BlobAssetStore();
         GameObjectConversionSettings settings = GameObjectConversionSettings.FromWorld(World.DefaultGameObjectInjectionWorld, blobAssetStore);
+
+        astroidEntities = new Entity[_astroidPrefabs.Length];
 
         for (int i = 0; i <_astroidPrefabs.Length; i++)
         {
@@ -52,7 +54,7 @@ public class AstroidSpawner : MonoBehaviour
     void SpawnAstroid()
     {
         Entity newAstroidEntity = manager.Instantiate(astroidEntities[(int)UnityEngine.Random.Range(0,2)]);
-        Vector3 direction = -Vector3.right;
+        Vector3 direction = Vector3.right;
         Vector3 speed = direction * UnityEngine.Random.Range(UnityEngine.Random.Range(-5, 10), UnityEngine.Random.Range(-5, 5));
 
         PhysicsVelocity velocity = new PhysicsVelocity()

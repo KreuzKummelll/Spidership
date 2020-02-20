@@ -43,10 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bed1fb196d734eaebe8dc352220003a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShipPrefab: {fileID: 2345151924355817028, guid: d399264237ce643b88d349f73b0ec8bf,
+  spawnPlayerAsEntity: 0
+  playerShipPrefabGO: {fileID: 0}
+  playerShipPrefabDOTS: {fileID: 2345151924355817028, guid: d399264237ce643b88d349f73b0ec8bf,
     type: 3}
+  wheel: {fileID: 0}
+  playerLaserLPrefab: {fileID: 0}
+  playerLaserRPrefab: {fileID: 0}
   scoreText: {fileID: 0}
   maxScore: 0
-  lasersPerShot: 10
-  laserPrefab: {fileID: 0}
-  laserSpeed: 3
+  lasersPerShot: 2
+  laserPrefab: {fileID: 7963519011398987594, guid: ad68d456f4a714178a62f8f477a84412,
+    type: 3}
+  laserSpeed: 13.88
+  maxAstroids: 1000

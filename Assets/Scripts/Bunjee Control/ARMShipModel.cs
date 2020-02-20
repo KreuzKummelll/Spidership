@@ -15,6 +15,7 @@ public class ARMShipModel : MonoBehaviour
         CharCtrl = this.GetComponent<CharacterController>();
         //rb = gameObject.GetComponent<Rigidbody>();
         //rb.useGravity = false;
+     
 
         accelerate = false;
     }
@@ -22,9 +23,9 @@ public class ARMShipModel : MonoBehaviour
     private void Update()
     {
         
-            Vector3 NextDir = new Vector3(-Input.GetAxis("Vertical") * 0.5f, 0, Input.GetAxis("Horizontal"));
-            if (NextDir != Vector3.zero)
-                transform.rotation = Quaternion.AngleAxis(90, -NextDir);
+            Vector3 NextDir = new Vector3((Input.GetAxis("Vertical")), 0, -Input.GetAxis("Horizontal"));
+            if (NextDir != Vector3.zero) 
+                transform.rotation = Quaternion.AngleAxis(40, NextDir);
             else
             {
                 transform.rotation = Quaternion.identity;
