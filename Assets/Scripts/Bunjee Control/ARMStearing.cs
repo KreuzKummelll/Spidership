@@ -21,11 +21,16 @@ public class ARMStearing : MonoBehaviour
     
     public int advanceRange;
     public AnimationCurve Curve = AnimationCurve.Linear(0, 0, 1, 1);
+    public float forwardMotionMultiplier = 5;
+    public float horizontalMotionMultiplier = 5;
+    public float verticalMotionMultiplier = 5;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        inputH = 0;
+        inputV = 0;
+        inputZ = 0;
     }
 
     // Update is called once per frame
@@ -39,8 +44,20 @@ public class ARMStearing : MonoBehaviour
     private void Stearing()
     {
 
-        inputH = Input.GetAxis("Horizontal");
-        inputV = Input.GetAxis("Vertical");
+        
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            inputZ = Input.GetAxis("Vertical") * 2 * forwardMotionMultiplier;
+            inputH = Input.mouseScrollDelta.x * 2 * horizontalMotionMultiplier;
+            inputV = -Input.mouseScrollDelta.y * 2 * verticalMotionMultiplier;
+        } else
+        {
+            inputZ = Input.GetAxis("Vertical") * 2;
+            inputH = Input.mouseScrollDelta.x * 2;
+            inputV = -Input.mouseScrollDelta.y * 2;
+        }
+        
 
         centerWheel();
 

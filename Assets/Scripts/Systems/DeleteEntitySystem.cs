@@ -2,27 +2,29 @@
 using Unity.Jobs;
 using Unity.Collections;
 
-
-//[AlwaysSynchronizeSystem]
-[UpdateAfter(typeof(LaserDeletionSystem))]
-public class DeleteEntitySystem : JobComponentSystem
+namespace Smalli.Spidership
 {
-    protected override JobHandle OnUpdate(JobHandle inputDeps)
+    //[AlwaysSynchronizeSystem]
+    [UpdateAfter(typeof(LaserDeletionSystem))]
+    public class DeleteEntitySystem : JobComponentSystem
     {
-        EntityCommandBuffer commandBuffer = new EntityCommandBuffer(Allocator.TempJob);
+        protected override JobHandle OnUpdate(JobHandle inputDeps)
+        {
+            EntityCommandBuffer commandBuffer = new EntityCommandBuffer(Allocator.TempJob);
 
-        Entities
-            .WithAll<DeleteTag>()
-            .WithoutBurst()
-            .ForEach((Entity entity) =>
-             {
-                 GameManager.instance.IncreaseScore();
+            Entities
+                .WithAll<DeleteTag>()
+                .WithoutBurst()
+                .ForEach((Entity entity) =>
+                 {
+                 //GameManager.instance.IncreaseScore();
                  commandBuffer.DestroyEntity(entity);
-             }).Run();
+                 }).Run();
 
-        commandBuffer.Playback(EntityManager);
-        commandBuffer.Dispose();
+            commandBuffer.Playback(EntityManager);
+            commandBuffer.Dispose();
 
-        return default;
+            return default;
+        }
     }
 }

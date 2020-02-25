@@ -1,9 +1,11 @@
 ﻿using Unity.Entities;
 
-
-[GenerateAuthoringComponent]
-public class TimerComponent : IComponentData
+namespace Smalli.Spidership
 {
-    public float currentLifeTime;
-    public float maxLifeTime;
+    [GenerateAuthoringComponent]
+    public class TimerComponent : IComponentData
+    {
+        public float currentLifeTime;
+        public float maxLifeTime;
+    }
 }

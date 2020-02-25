@@ -3,56 +3,62 @@ using Unity.Transforms;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+namespace Smalli.Spidership
 {
-    public static CameraFollow instance;
-    
-    public GameObject _playerShipPrefab;
-    public Entity playerShipEntity;
-    public float3 offset;
-
-    public GameManager gameManager;
-
-    private EntityManager manager;
-
-    
-
-
-    private void Awake()
+    public class CameraFollow : MonoBehaviour
     {
-        if (instance != null && instance != this)
+        public static CameraFollow instance;
+
+        public GameObject _playerShipPrefab;
+        public Entity playerShipEntity;
+        public float3 offset;
+
+        public GameManager gameManager;
+
+        private EntityManager manager;
+
+
+
+
+        private void Awake()
         {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-        manager = World.DefaultGameObjectInjectionWorld.EntityManager;
-
-   
-    }
-
-    private void Start()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-
-    }
-
-    private void LateUpdate()
-    {
-        if (gameManager.spawnPlayerAsEntity)
-        {
-            if (playerShipEntity == null)
+            if (instance != null && instance != this)
             {
+                Destroy(gameObject);
                 return;
             }
-            Translation playerPosition = manager.GetComponentData<Translation>(playerShipEntity);
-            transform.position = playerPosition.Value + offset;
+
+            instance = this;
+            manager = World.DefaultGameObjectInjectionWorld.EntityManager;
+
+
         }
-        else
+
+        private void Start()
         {
-            transform.position = _playerShipPrefab.transform.position + (Vector3)offset;
+            gameManager = FindObjectOfType<GameManager>();
+
         }
-        
+
+        private void LateUpdate()
+        {
+            if (gameManager.spawnPlayerAsEntity)
+            {
+                if (playerShipEntity == null)
+                {
+                    return;
+                }
+                Translation playerPosition = manager.GetComponentData<Translation>(playerShipEntity);
+                transform.position = playerPosition.Value + offset;
+
+
+            }
+            else
+            {
+                transform.position = _playerShipPrefab.transform.position + (Vector3)offset;
+
+            }
+
+        }
     }
 }

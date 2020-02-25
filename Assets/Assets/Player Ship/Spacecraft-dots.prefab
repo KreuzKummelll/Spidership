@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2345151924355817025}
   - component: {fileID: 2345151924355817054}
   - component: {fileID: 2465010106072545438}
+  - component: {fileID: 6698203751558630621}
   m_Layer: 0
   m_Name: Spacecraft-dots
   m_TagString: Untagged
@@ -236,6 +237,18 @@ MonoBehaviour:
     EnableVisualDebugger: 0
     Port: 25001
     TimerBufferSize: 1048576
+--- !u!114 &6698203751558630621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345151924355817028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f378f53890e4b129529a130f662456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2345151925009684247
 GameObject:
   m_ObjectHideFlags: 0

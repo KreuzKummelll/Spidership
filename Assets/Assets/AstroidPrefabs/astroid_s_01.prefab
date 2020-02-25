@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1215041045226103161}
   - component: {fileID: 7351236283987274711}
   - component: {fileID: -6489116702883275181}
+  - component: {fileID: 2294156282214984877}
   m_Layer: 0
   m_Name: astroid_s_01
   m_TagString: Untagged
@@ -189,6 +190,18 @@ MonoBehaviour:
     z: -0
   SolverIterationCount: 4
   ThreadCountHint: 8
+--- !u!114 &2294156282214984877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594890570839594761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ecb81a9d7824e5cbdaf4201c6be0c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8054720981590569620
 GameObject:
   m_ObjectHideFlags: 0
